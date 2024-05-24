@@ -1,15 +1,15 @@
 #pragma once
 #include <deque>
 #include <iostream>
-#include <raylib.h>
+
+#include "Settings.h"
 
 class Snake
 {
 private:
 	const Color color;
-	const int _cellSize;
 public:
-	Snake(int cellSize, Color color);
+	Snake(Color color);
 	std::deque<Vector2> body {Vector2(),Vector2() ,Vector2() };
 
 	void Draw();

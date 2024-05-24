@@ -1,6 +1,6 @@
 #include "Snake.h"
 
-Snake::Snake(int cellSize, Color color) : _cellSize(cellSize), color(color)
+Snake::Snake(Color color) : color(color)
 {
 
 }
