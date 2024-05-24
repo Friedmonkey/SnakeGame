@@ -2,10 +2,6 @@
 
 Food::Food(int cellSize, Color color) : _cellSize(cellSize), color(color)
 {
-}
-
-void Food::Load()
-{
 	Image image = LoadImage("./Graphics/apole.png");
 	texture = LoadTextureFromImage(image);
 	UnloadImage(image);

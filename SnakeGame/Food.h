@@ -13,8 +13,6 @@ public:
 	Food(int cellSize, Color color);
 	~Food();
 
-	void Load();
-
 	Vector2 pos {5,6};
 
 	void Draw();

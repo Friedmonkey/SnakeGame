@@ -11,16 +11,15 @@
 #define GREEN Color { 173, 204, 96, 255 }
 #define DARK_GREEN Color { 43, 51, 24, 255 }
 
-Food food = Food(CellSize, DARK_GREEN);
-Snake snake = Snake(CellSize, DARK_GREEN);
-
 
 int main()
 {
 	InitWindow(CellAmount, CellAmount, "snake game lol");
 	SetTargetFPS(60);
 
-	 food.Load();
+	//the classes need to be created AFTER initWindow to allow it to load the textures
+	Food food = Food(CellSize, DARK_GREEN);
+	Snake snake = Snake(CellSize, DARK_GREEN);
 
 	while (!WindowShouldClose())
 	{
