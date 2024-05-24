@@ -1,6 +1,6 @@
 #include "Food.h"
 
-Food::Food(Color color) : color(color)
+Food::Food()
 {
 	Image image = LoadImage("./Graphics/apole.png");
 	texture = LoadTextureFromImage(image);

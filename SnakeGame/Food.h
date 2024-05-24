@@ -4,12 +4,10 @@
 
 class Food
 {
-private:
-	const Color color;
 public:
 	Texture2D texture;
 
-	Food(Color color);
+	Food();
 	~Food();
 
 	Vector2 pos {5,6};

@@ -1,29 +1,45 @@
 #include "Food.h"
-#include "Snake.h"
+#include "Game.h"
 #include "Settings.h"
 
+double lastUpdateTime {0};
+
+bool eventTriggerd(double interval)
+{
+	double currentTime = GetTime();
+	if (currentTime - lastUpdateTime >= interval)
+	{
+		lastUpdateTime = currentTime;
+		return true;
+	}
+	return false;
+}
 
 int main()
 {
 	InitWindow(CellAmount, CellAmount, "snake game lol");
 	SetTargetFPS(60);
 
-	//the classes need to be created AFTER initWindow to allow it to load the textures
-	Food food = Food(DARK_GREEN);
-	Snake snake = Snake(DARK_GREEN);
+	//the class need to be created AFTER initWindow to allow it to load the textures
+	Game game = Game();
 
 	while (!WindowShouldClose())
 	{
 		BeginDrawing();
 
+		//Fixed time step updating
+		if (eventTriggerd(0.2))
+		{
+			//gets called every 0.2 seconds
+			game.FixedUpdate();
+		}
+
+		//Updating
+		game.Update();
+
 		// Drawing
 		ClearBackground(GREEN);
-
-		food.Draw();
-		snake.Draw();
-
-
-		//DrawText("Hello world", SW2/2,SH2,40,DARK_GREEN);
+		game.Draw();
 
 		EndDrawing();
 	}
