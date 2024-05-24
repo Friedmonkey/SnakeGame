@@ -6,7 +6,12 @@
 class Snake
 {
 private:
-	std::deque<Vector2> body;
+	const Color color;
+	const int _cellSize;
+public:
+	Snake(int cellSize, Color color);
+	std::deque<Vector2> body {Vector2()};
 
+	void Draw();
 };
 
